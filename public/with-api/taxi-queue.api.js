@@ -10,6 +10,7 @@ document.addEventListener('alpine:init', () => {
 			init() {
 				this.queueLength()
 				this.taxiQueueLength()
+				
 			},
 
 			queueLength() {
@@ -27,6 +28,7 @@ document.addEventListener('alpine:init', () => {
 					.post('/api/passenger/join')
 					.then((result) => {
 						console.log(result.data.message);
+						this.init()
 					})
 			},
 
@@ -36,6 +38,7 @@ document.addEventListener('alpine:init', () => {
 					.post('/api/passenger/leave')
 					.then((result) => {
 						console.log(result.data.message);
+						this.init()
 					})
 			},
 
@@ -44,6 +47,7 @@ document.addEventListener('alpine:init', () => {
 					.post('/api/taxi/join')
 					.then((result) => {
 						console.log(result.data.message);
+						this.init()
 					})
 			},
 
@@ -68,6 +72,7 @@ document.addEventListener('alpine:init', () => {
 					.post('/api/taxi/depart')
 					.then((result) => {
 						console.log(result.data.message);
+						this.init()
 					})
 			}
 		}
