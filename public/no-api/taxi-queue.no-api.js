@@ -44,7 +44,7 @@ document.addEventListener("alpine:init", () => {
 		},
   
 		taxiDepart() {
-		  if (this.queueLengthPassnger >= 12) {
+		  if (this.queueLengthPassnger >= 12  && this.taxi_queue_count>0) {
 			this.taxiDepartPassenger = this.queueLengthPassnger - 12;
 			this.TaxiDepartTaxi = this.taxi_queue_count - 1;
 			this.queueLengthPassnger = this.taxiDepartPassenger;
